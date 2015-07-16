@@ -26,8 +26,11 @@ bed_to_granges <- function(file){
 
    header <- c('chr','start','end','id','score','strand')
    names(df) <- header[1:length(names(df))]
-   df$strand <- gsub(pattern="[^+-]+", replacement = '*', x = df$strand)
-
+   
+   if('strand' %in% colnames(df)){
+      df$strand <- gsub(pattern="[^+-]+", replacement = '*', x = df$strand)
+   }
+   
    library("GenomicRanges")
 
    if(length(df)==3){
