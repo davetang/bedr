@@ -1,0 +1,4 @@
+chr	start	end	id	score	strand
+chr1	12345	12346	one	0.215509	+
+chr2	23456	23600	two	0.0641982	-
+chr3	34567	40000	three	0.0034311	+

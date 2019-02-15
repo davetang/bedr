@@ -6,15 +6,16 @@
 #' Any columns after the strand column are ignored.
 #' 
 #' @param file Location of your file
+#' @param header Logical for whether file has a header (default = FALSE)
 #' @keywords BED GRanges
 #' @export
 #' @examples
 #' bed_to_granges('my_bed_file.bed')
 
-bed_to_granges <- function(file){
+bed_to_granges <- function(file, header = FALSE){
    df <- read.table(file,
-                    header=F,
-                    stringsAsFactors=F)
+                    header = header,
+                    stringsAsFactors = FALSE)
 
    if(length(df) > 6){
       df <- df[,-c(7:length(df))]
